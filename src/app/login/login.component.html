@@ -15,17 +15,20 @@
 
         <div class="form-input ">
 
-          <form>
+          <form [formGroup]="forms" (ngSubmit)="ingresar()">
             <div class="form-group">
-              <label></label>
-              <label class="text-white">USUARIO</label>
-              <input type="text" class="form-control">
+              <mat-form-field class="ancho" appearance="fill">
+                <mat-label>USUARIO</mat-label>
+                <input matInput autocomplete="off" formControlName="Usuario">
+              </mat-form-field>
             </div>
             <div class="form-group">
-              <label class="text-white mt-3">CONTRASEÑA</label>
-              <input type="password" class="form-control mt-1">
+              <mat-form-field class="ancho" appearance="fill">
+                <mat-label>CONTRASEÑA</mat-label>
+                <input type="password" matInput autocomplete="off" formControlName="Contrasena">
+              </mat-form-field>
             </div>
-            <button mat-raised-button class="mr-3 mt-3"  [routerLink]="[('/home')]" >INGRESAR</button>
+            <button mat-raised-button class="mr-3 mt-3" [disabled]="forms.invalid"  type="submit">INGRESAR</button>
 
           </form>
 
