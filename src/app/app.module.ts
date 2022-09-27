@@ -7,10 +7,11 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { MaterialModule } from './NgMaterial/material/material.module';
-import { TablaComponent } from './tabla/tabla.component';
+import { tablaComponent } from './Usuario/tabla.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+//importar HttpClientModule
+import {  HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     LoginComponent,
     HomeComponent,
     NoEncontradoComponent,
-    TablaComponent,
+    tablaComponent,
     NavbarComponent,
     FooterComponent,
 

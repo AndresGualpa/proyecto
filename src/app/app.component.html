@@ -1,12 +1,20 @@
 <!-- <app-login></app-login> -->
 
-<!--<router-outlet>
+<router-outlet>
 
-</router-outlet>-->
-<table class="table">
+</router-outlet>
+<!--
+  <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
       <th scope="col">Handle</th>
@@ -14,19 +22,21 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of datatable">
-      <th scope="row">1</th>
+      <td>{{item.grp_cod}}</td>
+      <td>{{item.usr_aud}}</td>
+       <td>{{item.usr_clv}}</td>
+      <td>{{item.usr_cod}}</td>
+      <td>{{item.usr_dom}}</td>
+      <td>{{item.usr_est}}</td>
+       <td>{{item.usr_fec_ult}}</td>
       <td>{{item.usr_nom}}</td>
+      <td>{{item.usr_tacc}}</td>
+      <td>{{item.usr_treg}}</td>
+       <td>{{item.usr_vig_clv}}</td>
+
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+
+
   </tbody>
 </table>
+-->
