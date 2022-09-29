@@ -12,7 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 //importar HttpClientModule
 import {  HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,9 @@ import {  HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
-
+    HttpClientModule,
+    FormsModule,
+    MatIconModule
 
 
   ],

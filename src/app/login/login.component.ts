@@ -11,17 +11,15 @@ import { AppRoutingModule } from '../app-routing.module';
 })
 export class LoginComponent implements OnInit {
 forms:FormGroup
-  constructor(
- private router: Router, private fb:FormBuilder,private _snackBar: MatSnackBar
-    )
+  constructor(  private router: Router, private fb:FormBuilder,private _snackBar: MatSnackBar )
+{
 
-    {
 this.forms=this.fb.group({
 Usuario:['',Validators.required],
 Contrasena:['',Validators.required]
 })
 
-   }
+}
 
   ngOnInit(): void {
   }
@@ -47,7 +45,5 @@ error(){
     verticalPosition: 'top',
     duration:5000
   });
-
-
 }
 }

@@ -21,7 +21,7 @@ export class tablaComponent implements OnInit {
   usuario:Usuario = new Usuario();
   datatable:any=[];
 ///
-displayedColumns: string[] = ['usr_cod', 'usr_nom', 'usr_est', 'usr_treg','usr_clv', 'usr_tacc', 'grp_cod', 'usr_aud','usr_fec_ult', 'usr_vig_clv', 'usr_dom'];
+displayedColumns: string[] = ['usr_cod', 'usr_nom', 'usr_est', 'usr_treg','usr_clv', 'usr_tacc', 'grp_cod', 'usr_aud','usr_fec_ult', 'usr_vig_clv', 'usr_dom','boton'];
 
 
 
@@ -54,19 +54,57 @@ applyFilter(event: Event) {
   const filterValue = (event.target as HTMLInputElement).value;
   this.dataSource.filter = filterValue.trim().toLowerCase();
 }
-onSetData(select:any){
-this.usuario.grp_cod=select.grp_cod;
-this.usuario.usr_aud=select.usr_aud;
-this.usuario.usr_clv=select.usr_clv;
-this.usuario.usr_cod=select.usr_cod;
-this.usuario.usr_dom=select.usr_dom;
-this.usuario.usr_est=select.usr_est;
-this.usuario.usr_fec_ult=select.usr_fec_ult;
-this.usuario.usr_nom=select.usr_nom;
-this.usuario.usr_tacc=select.usr_tacc;
-this.usuario.usr_treg=select.usr_treg;
-this.usuario.usr_vig_clv=select.usr_vig_clv;
 
+OnAddusuario(usuario:Usuario):void{
+  this.usuarioService.addUsuario(usuario).subscribe(res=>{
+if(res){
+  this.clear();
+  this.ondatatable();
+}else{
 
+}}); }
+
+onUpdateUsuario(usuario:Usuario):void{
+  this.usuarioService.updateUsuario(usuario).subscribe(res => {
+    if(res){
+      alert(`La mascota número ${usuario} se ha modificado con exito!`);
+      this.clear();
+      this.ondatatable();
+      console.log('usuario');
+      console.log(usuario);
+    } else {
+      alert('Error! :(')
+    }
+  });
 }
+
+onSetData(select:any){
+  this.usuario.usr_cod=select.usr_cod;
+  this.usuario.usr_nom=select.usr_nom;
+  this.usuario.usr_est=select.usr_est;
+  this.usuario.usr_treg=select.usr_treg;
+  this.usuario.usr_clv=select.usr_clv;
+  this.usuario.usr_tacc=select.usr_tacc;
+  this.usuario.grp_cod=select.grp_cod;
+  this.usuario.usr_aud=select.usr_aud;
+  this.usuario.usr_fec_ult=select.usr_fec_ult;
+  this.usuario.usr_vig_clv=select.usr_vig_clv;
+  this.usuario.usr_dom=select.usr_dom;
+
+  }
+
+clear(){
+this.usuario.grp_cod="";
+this.usuario.usr_aud="";;
+this.usuario.usr_clv="";;
+this.usuario.usr_cod="";;
+this.usuario.usr_dom="";;
+this.usuario.usr_est="";;
+this.usuario.usr_fec_ult="";;
+this.usuario.usr_nom="";;
+this.usuario.usr_tacc="";;
+this.usuario.usr_treg="";;
+this.usuario.usr_vig_clv=0;;
+}
+
 }
